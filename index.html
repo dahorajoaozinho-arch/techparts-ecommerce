@@ -221,6 +221,19 @@
     
     .drawer-footer { padding: 1.5rem; border-top: 0.5px solid #1e3a5f; background: #090c12; }
     .cart-total { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: 600; color: #ccddf0; font-size: 1.1rem; }
+
+    /* ── FLOATING WA ── */
+    .floating-wa {
+      position: fixed; bottom: 24px; left: 24px;
+      background: #25D366; color: #fff; width: 56px; height: 56px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+      z-index: 998; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .floating-wa:hover {
+      transform: translateY(-5px); box-shadow: 0 12px 28px rgba(37,211,102,0.6);
+    }
+    .floating-wa svg { width: 32px; height: 32px; fill: currentColor; }
   </style>
 </head>
 <body>
@@ -319,6 +332,13 @@
 <!-- TOAST -->
 <div id="toast"></div>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/5569993734638?text=Olá! Gostaria de falar com um de seus atendentes." target="_blank" class="floating-wa" title="Fale com a gente no WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.666.866 5.127 2.33 7.151L.744 24l4.98-1.579a11.96 11.96 0 0 0 6.307 1.772c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm6.541 17.147c-.28.788-1.58 1.488-2.183 1.542-.603.054-1.294.135-4.22-.979-3.535-1.344-5.836-5.011-6.012-5.247-.176-.236-1.436-1.921-1.436-3.664 0-1.743.896-2.616 1.218-2.955.322-.339.7-.423.933-.423.233 0 .466-.003.659 0 .193.003.452-.073.705.542.253.615.867 2.124.945 2.279.078.155.131.336.035.53-.096.194-.146.314-.292.485-.146.171-.309.381-.439.497-.146.131-.302.276-.135.565.167.289.744 1.233 1.599 1.996 1.101.986 2.029 1.295 2.318 1.436.289.141.458.117.629-.071.171-.188.736-.856.932-1.15.196-.294.392-.244.654-.146.262.098 1.656.782 1.939.923.283.141.472.212.54.33.068.118.068.68-.212 1.468z"/>
+  </svg>
+</a>
+
 <!-- DRAWER CART -->
 <div class="drawer-overlay" id="drawer-overlay" onclick="toggleCart()"></div>
 <div class="drawer" id="drawer">
@@ -345,17 +365,17 @@
     {
       id:2, name:'RX 6700 XT', spec:'12GB GDDR6 · TDP 230W',
       price:'R$ 1.480', old:'R$ 2.200', cat:'gpu', cond:'bom', hot:false, stars:4,
-      img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/AMD_Radeon_RX_6700_XT.jpg/640px-AMD_Radeon_RX_6700_XT.jpg'
+      img:'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&q=80&w=640'
     },
     {
       id:3, name:'GTX 1080 Ti', spec:'11GB GDDR5X · TDP 250W',
       price:'R$ 780', old:'R$ 1.100', cat:'gpu', cond:'bom', hot:false, stars:4,
-      img:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/NVIDIA_GeForce_GTX_1080_Ti_Founders_Edition_%2834381355174%29.jpg/640px-NVIDIA_GeForce_GTX_1080_Ti_Founders_Edition_%2834381355174%29.jpg'
+      img:'https://images.unsplash.com/photo-1600348705300-84ebdc13309a?auto=format&fit=crop&q=80&w=640'
     },
     {
       id:4, name:'RTX 2070 Super', spec:'8GB GDDR6 · TDP 215W',
       price:'R$ 980', old:'', cat:'gpu', cond:'otimo', hot:true, stars:5,
-      img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/NVIDIA-RTX-2070-Super-Founders-Edition.jpg/640px-NVIDIA-RTX-2070-Super-Founders-Edition.jpg'
+      img:'https://images.unsplash.com/photo-1620245459344-77e8a93bd579?auto=format&fit=crop&q=80&w=640'
     },
     {
       id:5, name:'DDR4 16GB Kit', spec:'3200MHz · 2x8GB',
@@ -365,17 +385,17 @@
     {
       id:6, name:'DDR4 32GB Kit', spec:'3600MHz · 2x16GB',
       price:'R$ 380', old:'R$ 580', cat:'ram', cond:'bom', hot:false, stars:4,
-      img:'https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&q=80&w=640'
+      img:'https://images.unsplash.com/photo-1541029071515-84cc54f84dc5?auto=format&fit=crop&q=80&w=640'
     },
     {
       id:7, name:'Ryzen 5 5600X', spec:'6C/12T · 3.7GHz boost',
       price:'R$ 520', old:'R$ 750', cat:'cpu', cond:'otimo', hot:true, stars:5,
-      img:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/AMD_Ryzen_5_3600_Boxed_CPU_top.jpg/640px-AMD_Ryzen_5_3600_Boxed_CPU_top.jpg'
+      img:'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=640'
     },
     {
       id:8, name:'Core i7-10700K', spec:'8C/16T · 3.8GHz boost',
       price:'R$ 640', old:'', cat:'cpu', cond:'regular', hot:false, stars:3,
-      img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Intel_i7_10700K_top.jpg/640px-Intel_i7_10700K_top.jpg'
+      img:'https://images.unsplash.com/photo-1632516447833-b9ee015ab5f6?auto=format&fit=crop&q=80&w=640'
     },
   ];
 
@@ -496,7 +516,7 @@
        total += parsePrice(p.price);
     });
     text += `%0A*Total: ${formatPrice(total)}*`;
-    window.open(`https://wa.me/5511999999999?text=${text}`, '_blank');
+    window.open(`https://wa.me/5569993734638?text=${text}`, '_blank');
   }
 
   document.getElementById('produtos').dataset.currentFilter = 'all';
